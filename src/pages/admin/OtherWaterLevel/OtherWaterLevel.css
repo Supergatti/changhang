@@ -1,0 +1,8 @@
+.SpecialSelect .ant-select-selector {
+  max-height: 240px;
+  overflow: auto;
+}
+
+.SpecialInput  {
+  width: 150px;
+}

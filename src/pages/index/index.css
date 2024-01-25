@@ -1,0 +1,50 @@
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+body,
+#root {
+  height: 100%;
+}
+.right-name {
+  width: 200px;
+  padding-right: 40px;
+  text-align: right;
+  float: right;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.firstUser .ant-modal-content {
+  border-radius: 20px;
+  overflow: hidden;
+}
+.firstUser .ant-modal-content .ant-modal-header {
+  border-bottom: 0px !important;
+}
+.firstUser .ant-modal-content .ant-modal-header .ant-modal-title {
+  color: #21b5f0;
+}
+.firstUser .ant-modal-content .ant-modal-body {
+  padding: 0 20px 20px 20px;
+}
+.firstUser .ant-modal-content .ant-modal-body div {
+  text-align: center;
+}
+.firstUser .ant-modal-content .ant-modal-body .ant-input-password {
+  width: 240px !important;
+}
+.firstUser .ant-modal-content .ant-modal-footer{
+  display: flex;    justify-content: space-between;
+}
