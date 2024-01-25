@@ -242,7 +242,7 @@ export default class OtherWaterLevel extends Component {
 
   // 站点下拉
   basInfo = async () => {
-    this.setState({optionSite:["万州","a"],})
+    this.setState({optionSite:["万州"]})
     // const res = await basInfo();
     // this.setState({
     //   optionSite: res.content,
@@ -284,27 +284,6 @@ export default class OtherWaterLevel extends Component {
         averageCoefficient1: "--", // 确定性系数
       },
     });
-    const ListMan_Data = {
-      "averageDeviationThan": 0.33,
-      "averageDeviationNub": 0.29,
-      "averageCoefficient": "--",
-      "dateList": [
-          {
-              "measureTime": "2024-01-06 08",
-              "siteName": "万州站",
-              "measureWater85": 166.71,
-              "deviationNub": 0.29,
-              "deviationThan": 0.1118,
-              "t1": 166.77,
-              "t2": 166.78,
-              "t3": 166.97,
-              "t4": 166.99,
-              "t5": 167.08,
-              "t6": 167.23,
-              "t7": 167.18
-          }
-      ]
-  };
     const { measureTimeStart, measureTimeEnd } = this.state.param;
     const { siteName } = this.state;
     // let res = await ListMan({
@@ -312,7 +291,6 @@ export default class OtherWaterLevel extends Component {
     //   measureTimeEnd,
     //   siteName,
     // });
-    // console.log(res, " 7天水位人工预测对比");
     let res = {
       "success": true,
       "message": "成功",
@@ -339,6 +317,7 @@ export default class OtherWaterLevel extends Component {
           ]
       }
   }
+    console.log(res, " 7天水位人工预测对比");
     if (res.code == 200) {
       let meanSquare = "--";
       if ((res.content.dateList[0] ?? "") !== "") {
@@ -362,27 +341,6 @@ export default class OtherWaterLevel extends Component {
     this.setState({
       artificialData: [],
     });
-    // const res = await get7WaterForecastAnalysisListManFormat({
-    //   measureTimeStart,
-    //   measureTimeEnd,
-    //   siteName,
-    // });
-  //   let ListManFormat_Data = [
-  //     {
-  //         "measureTime": "2024-01-06 08",
-  //         "siteName": "万州站",
-  //         "measureWater85": 166.71,
-  //         "deviationNub": 0.29,
-  //         "deviationThan": 0.1118,
-  //         "t1": 166.77,
-  //         "t2": 166.78,
-  //         "t3": 166.97,
-  //         "t4": 166.99,
-  //         "t5": 167.08,
-  //         "t6": 167.23,
-  //         "t7": 167.18
-  //     }
-  // ];
     const res = {
       "success": true,
       "message": "成功",
@@ -420,22 +378,42 @@ export default class OtherWaterLevel extends Component {
     //   siteName,
     // });
     const res = {
-      "returnList": [
-          {
-              "date": "2024-01-06 08",
-              "measureLevel": 166.71,
-              "T_2": 166.78,
-              "T_1": 166.77,
-              "T_4": 166.99,
-              "T_3": 166.97,
-              "T_6": 167.23,
-              "T_5": 167.08,
-              "T_7": 167.18
-          }
-      ]
-  }
+      "success": true,
+      "message": "成功",
+      "code": "200",
+      "content": {
+          "returnList": [
+              {
+                  "date": "2024-01-06 08",
+                  "measureLevel": 166.71,
+                  "T_2": 166.78,
+                  "T_1": 166.77,
+                  "T_4": 166.99,
+                  "T_3": 166.97,
+                  "T_6": 167.23,
+                  "T_5": 167.08,
+                  "T_7": 167.18
+              }
+          ]
+      }
+  };
+  //   const res = {
+  //     "returnList": [
+  //         {
+  //             "date": "2024-01-06 08",
+  //             "measureLevel": 166.71,
+  //             "T_2": 166.78,
+  //             "T_1": 166.77,
+  //             "T_4": 166.99,
+  //             "T_3": 166.97,
+  //             "T_6": 167.23,
+  //             "T_5": 167.08,
+  //             "T_7": 167.18
+  //         }
+  //     ]
+  // }
     console.log(res);
-    if (/*res.code == 200*/ 1) {
+    if (res.code == 200) {
       let forecastxAxis = [];
       let historyxAxis = [];
       let Xdata = ["T_7", "T_6", "T_5", "T_4", "T_3", "T_2", "T_1"];
