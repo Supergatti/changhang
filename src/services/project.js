@@ -64,7 +64,6 @@ export function basHandList(data) {
 
 // 七天水位预测页面 --- 7天模型预测水位数据 (预测指标)
 export function get7WaterForecastAnalysisList(data) {
-  print("getdata1");
   return (
     // lyPrefix +
     //   "/deptwave-system/bas-7-water-forecast-result/get7WaterForecastAnalysisList",
@@ -416,7 +415,6 @@ export function get7WaterForecastAnalysisList(data) {
 }
 // 七天水位预测页面 --- 预测水位数据对比图表
 export function get7WaterForecastAnalysisListForChart(data) {
-  print("getdata2");
   return (
     {
       "returnList": [
@@ -691,7 +689,7 @@ export function get7WaterForecastAnalysisListForChart(data) {
 
 // 七天水位预测页面 --- 7天水位人工预测对比 （预测指标）
 export function ListMan(data) {
-  print("getdata3");
+
   return (
     {
       "averageDeviationThan": 0.33,
@@ -718,7 +716,7 @@ export function ListMan(data) {
 }
 //  7天水位预测页面 --- 7天水位人工预测对比 图表
 export function ForChartMan(data) {
-  print("getdata4");
+
   return (
     {
       "returnList": [
@@ -740,7 +738,7 @@ export function ForChartMan(data) {
 
 // 7天人工表格数据
 export function get7WaterForecastAnalysisListManFormat(data) {
-  print("getdata5");
+
   return (
     [
       {
@@ -762,7 +760,7 @@ export function get7WaterForecastAnalysisListManFormat(data) {
 }
 // 7天模型表格数据
 export function get7WaterForecastAnalysisListFormat(data) {
-  print("getdata6");
+
   return (
     [
       {
