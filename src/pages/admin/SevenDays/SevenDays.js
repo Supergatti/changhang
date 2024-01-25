@@ -581,24 +581,53 @@ export default class OtherWaterLevel extends Component {
           },
           xAxis: {
             data: xAxisData,
+            // type: "time",
+            // axisLabel: {
+            //   interval: 1,
+            // },
+            // splitLine: {
+            //   show: false,
+            // },
           },
-          yAxis: {
-            type: "value",
-            boundaryGap: [0, "100%"],
-            splitLine: {
-              show: false,
+          yAxis: [
+            {
+              type: "value",
+              boundaryGap: [0, "100%"],
+              splitLine: {
+                show: false,
+              },
+              max: function (value) {
+                // console.log("最大值", value.max + value.max * 0.3);
+                const maxv = value.max + value.max * 0.003;
+                return maxv.toFixed(2);
+              },
+              min: function (value) {
+                // console.log("最小值", value.min + value.min * 0.3);
+                const minv = value.min - value.min * 0.003;
+                return minv.toFixed(2);
+                // return value.min;
+              },
             },
-            max: function (value) {
-              // console.log("最大值", value.max + value.max * 0.3);
-              const maxv = value.max + value.max * 0.003;
-              return maxv;
-            },
-            min: function (value) {
-              // console.log("最小值", value.min + value.min * 0.3);
-              return value.min - value.min * 0.003;
-              // return value.min;
-            },
-          },
+            {
+              type: "value",
+              boundaryGap: [0, "100%"],
+              splitLine: {
+                show: false,
+              },
+              max: function (value) {
+                let maxResidual = Math.max(residuals);console.log(maxResidual);
+                return maxResidual + maxResidual * 0.1
+                
+              },
+              // min: function (value) {
+              //   const minv = value.min - value.min * 0.3;
+              //   return minv.toFixed(2);
+              // },
+              // max:0.004,
+              // max:
+              min: 0,
+            }
+          ],
           series: [
             {
               name: "预测水位",
@@ -613,6 +642,14 @@ export default class OtherWaterLevel extends Component {
               showSymbol: false,
               hoverAnimation: false,
               data: historyxAxis,
+            },
+            {
+              name: "残差",
+              type: "line",
+              yAxisIndex: 1,// 指定使用次坐标轴
+              showSymbol: false,
+              hoverAnimation: false,
+              data: residuals,
             },
           ],
         },
