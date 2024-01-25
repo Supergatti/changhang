@@ -480,12 +480,12 @@ export default class OtherWaterLevel extends Component {
             },
             max: function (value) {
               // console.log("最大值", value.max + value.max * 0.3);
-              const maxv = value.max + value.max * 0.3;
+              const maxv = value.max + value.max * 0.003;
               return maxv.toFixed(2);
             },
             min: function (value) {
               // console.log("最小值", value.min + value.min * 0.3);
-              const minv = value.min - value.min * 0.3;
+              const minv = value.min - value.min * 0.003;
               return minv.toFixed(2);
               // return value.min;
             },
@@ -557,12 +557,12 @@ export default class OtherWaterLevel extends Component {
             },
             max: function (value) {
               // console.log("最大值", value.max + value.max * 0.3);
-              const maxv = value.max + value.max * 0.3;
+              const maxv = value.max + value.max * 0.003;
               return maxv;
             },
             min: function (value) {
               // console.log("最小值", value.min + value.min * 0.3);
-              return value.min - value.min * 0.3;
+              return value.min - value.min * 0.003;
               // return value.min;
             },
           },
